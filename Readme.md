@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/BrianSerem/InfluMart.svg?branch=develop)](https://travis-ci.com/BrianSerem/InfluMart)
+
 # InfluMart
 
 A web platform that eases the pain of buying and selling influencer services. A brand cannot achieve organic growth without reaching out to potential consumers. InfluMart will help you hit the target market without spending a fortune. InfluMart connects your brand with trusted and influencial 'ambassadors'. They will help spread the word to the right audience.
