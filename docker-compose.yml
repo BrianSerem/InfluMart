@@ -1,0 +1,28 @@
+version: "3"
+
+volumes:
+    build:
+      driver: local
+    data:
+      external: true
+    webroot:
+      driver: local
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+  database:
+    image: postgres
+    restart: always
+    ports:
+      - "5433:5432"
+    expose:
+      - "5432"
+    volumes:
+      - data:/var/lib/postgresql/data
+   
