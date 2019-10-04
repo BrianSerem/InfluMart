@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kkq1#*$bjq-)b8-g0a4x+7r#vwvs)t5pw&xtx!%-fc7^=(16aa'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'InfluMart.apps.authentication',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'InfluMart.apps.urls'
+
+AUTH_USER_MODEL = 'authentication.User'
 
 TEMPLATES = [
     {
@@ -77,9 +81,9 @@ WSGI_APPLICATION = 'InfluMart.apps.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME', default='legion_backend'),
-        'USER': config('DB_USER', default='legion'),
-        'PASSWORD': config('DB_PASSWORD', default='&L3g10n'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
         'PORT': '',
     }
